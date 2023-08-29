@@ -190,7 +190,7 @@ export default function App() {
         .map((k) => {
           // Flip horizontally on android or when using back camera on iOS.
           const flipX =
-            IS_ANDROID || cameraType === CameraType.back;
+            IS_ANDROID || cameraType == CameraType.back || cameraType == CameraType.front;
           const x = flipX ? getOutputTensorWidth() - k.x : k.x;
           const y = k.y;
           const cx =
@@ -340,15 +340,14 @@ const styles = StyleSheet.create({
     position: 'relative',
     width: CAM_PREVIEW_WIDTH,
     height: CAM_PREVIEW_HEIGHT,
-    marginTop:
-      Dimensions.get('window').height / 2 - CAM_PREVIEW_HEIGHT / 2,
+    marginTop: Dimensions.get('window').height / 2 - CAM_PREVIEW_HEIGHT / 2,
   },
   containerLandscape: {
     position: 'relative',
-    width: CAM_PREVIEW_HEIGHT,
-    height: CAM_PREVIEW_WIDTH,
-    marginLeft:
-      Dimensions.get('window').height / 2 - CAM_PREVIEW_HEIGHT / 2,
+    width: CAM_PREVIEW_HEIGHT * 1,
+    height: CAM_PREVIEW_WIDTH * 1,
+    marginTop: Dimensions.get('window').height / 10,
+    marginLeft: Dimensions.get('window').height / 4 - CAM_PREVIEW_HEIGHT / 4,
   },
   loadingMsg: {
     position: 'absolute',
