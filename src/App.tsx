@@ -58,19 +58,17 @@ const IS_IOS = Platform.OS === 'ios';
 // This might not cover all cases.
 const CAM_PREVIEW_WIDTH = Dimensions.get('window').width;
 const CAM_PREVIEW_HEIGHT =
-  CAM_PREVIEW_WIDTH / (IS_IOS ? 9 / 16 : 3 / 4);
+  CAM_PREVIEW_WIDTH / (IS_IOS ? 16 / 9 : 4 / 3);
 
 // The score threshold for pose detection results.
 const MIN_KEYPOINT_SCORE = 0.3;
 
-// The size of the resized output from TensorCamera.
-//
 // For movenet, the size here doesn't matter too much because the model will
 // preprocess the input (crop, resize, etc). For best result, use the size that
 // doesn't distort the image.
 const OUTPUT_TENSOR_WIDTH = 180;
 const OUTPUT_TENSOR_HEIGHT =
-  OUTPUT_TENSOR_WIDTH / (IS_IOS ? 9 / 16 : 3 / 4);
+  OUTPUT_TENSOR_WIDTH / (IS_IOS ? 16 / 9 : 4 / 3);
 
 // Whether to auto-render TensorCamera preview.
 const AUTO_RENDER = true;
@@ -84,7 +82,7 @@ export default function App() {
   const [orientation, setOrientation] =
     useState<ScreenOrientation.Orientation>();
   const [cameraType, setCameraType] = useState<CameraType>(
-    Camera.Constants.Type.front,
+    CameraType.front,
   );
   // Use `useRef` so that changing it won't trigger a re-render.
   //
@@ -192,7 +190,7 @@ export default function App() {
         .map((k) => {
           // Flip horizontally on android or when using back camera on iOS.
           const flipX =
-            IS_ANDROID || cameraType === Camera.Constants.Type.back;
+            IS_ANDROID || cameraType === CameraType.back;
           const x = flipX ? getOutputTensorWidth() - k.x : k.x;
           const y = k.y;
           const cx =
@@ -236,7 +234,7 @@ export default function App() {
       >
         <Text>
           Switch to{' '}
-          {cameraType === Camera.Constants.Type.front
+          {cameraType === CameraType.front
             ? 'back'
             : 'front'}{' '}
           camera
@@ -246,10 +244,10 @@ export default function App() {
   };
 
   const handleSwitchCameraType = () => {
-    if (cameraType === Camera.Constants.Type.front) {
-      setCameraType(Camera.Constants.Type.back);
+    if (cameraType === CameraType.front) {
+      setCameraType(CameraType.back);
     } else {
-      setCameraType(Camera.Constants.Type.front);
+      setCameraType(CameraType.front);
     }
   };
 
@@ -292,9 +290,9 @@ export default function App() {
       case ScreenOrientation.Orientation.PORTRAIT_DOWN:
         return 180;
       case ScreenOrientation.Orientation.LANDSCAPE_LEFT:
-        return cameraType === Camera.Constants.Type.front ? 270 : 90;
+        return cameraType === CameraType.front ? 270 : 90;
       case ScreenOrientation.Orientation.LANDSCAPE_RIGHT:
-        return cameraType === Camera.Constants.Type.front ? 90 : 270;
+        return cameraType === CameraType.front ? 90 : 270;
       default:
         return 0;
     }
