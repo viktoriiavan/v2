@@ -22,6 +22,39 @@ const icons = {
   weight: require(`../../assets/images/weight.png`),
 };
 
+// Get the current date
+const currentDate = new Date();
+const options = {
+  weekday: "long",
+  month: "short",
+  day: "numeric", // Add day option to include the day of the month
+};
+const formattedDate = formatDate(currentDate, options);
+
+// Function to format the day with a suffix
+function formatDate(date, options) {
+  const day = date.getDate();
+  const suffix = getDaySuffix(day);
+  return `${date.toLocaleDateString(undefined, options)}${suffix}`;
+}
+
+// Function to get the day suffix
+function getDaySuffix(day) {
+  if (day >= 11 && day <= 13) {
+    return "th";
+  }
+  switch (day % 10) {
+    case 1:
+      return "st";
+    case 2:
+      return "nd";
+    case 3:
+      return "rd";
+    default:
+      return "th";
+  }
+}
+
 export default function ShirsenduSectionB() {
   const [achievements, setAchievements] = useState<AchievementsData[]>([
     {
@@ -74,7 +107,7 @@ export default function ShirsenduSectionB() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.text} />
-      {section(["sun", "Monday, Sept 16th", "Welcome Back"])}
+      {section(["sun", formattedDate, "Welcome Back"])}
       <View style={styles.list}>
         <FlatList
           showsHorizontalScrollIndicator={false}
