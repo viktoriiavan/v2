@@ -67,7 +67,7 @@ const section = ([icon, title, details]: string[]) => {
   );
 };
 
-export default function ShirsenduSectionB() {
+export default function SectionB() {
   const [achievements, setAchievements] = useState<AchievementsData[]>([
     {
       id: '1',
@@ -108,14 +108,16 @@ export default function ShirsenduSectionB() {
     <SafeAreaView style={styles.container}>
       <View style={styles.text} />
       {section(['sun', formattedDate, 'Welcome Back'])}
-      <View style={styles.list}>
-        <FlatList
-          showsHorizontalScrollIndicator={false}
-          horizontal={true}
-          data={achievements}
-          renderItem={renderItem}
-          keyExtractor={(item) => item.id}
-        />
+      <View style={{ paddingHorizontal: 32 }}>
+        <View style={styles.list}>
+          <FlatList
+            showsHorizontalScrollIndicator={false}
+            horizontal={true}
+            data={achievements}
+            renderItem={renderItem}
+            keyExtractor={(item) => item.id}
+          />
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -123,9 +125,7 @@ export default function ShirsenduSectionB() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: 'black',
-    paddingHorizontal: 24,
   },
   section: {
     flexDirection: 'row',
@@ -150,11 +150,10 @@ const styles = StyleSheet.create({
   },
   list: {
     position: 'relative',
-    left: -24,
-    width: '114%',
+    left: -28,
+    width: '116%',
     height: 212,
     marginVertical: 8,
-    paddingHorizontal: 8,
   },
   text: {
     width: '100%',
