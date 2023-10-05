@@ -15,7 +15,7 @@ export default function WorkoutCard() {
 const styles = StyleSheet.create({
   card: {
     position: 'relative',
-    marginHorizontal: 30,
+    marginHorizontal: 16,
     borderRadius: 25,
     borderColor: 'rgba(255, 255, 255, .5)',
     borderWidth: 1,

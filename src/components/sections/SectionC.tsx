@@ -1,16 +1,10 @@
-import {
-  SafeAreaView,
-  View,
-  StyleSheet,
-  TouchableOpacity,
-  Text,
-} from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import { section } from './SectionB';
 import WorkoutCard from '../WorkoutCard';
 
 export default function SectionC() {
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <View style={styles.text} />
       {section(['weight', 'Select Your Workout', 'Ready, Set, Go'])}
       <View style={styles.workoutCardWrapper}>
@@ -21,7 +15,7 @@ export default function SectionC() {
           <Text style={styles.ctaText}>Begin Workout</Text>
         </TouchableOpacity>
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
 
@@ -40,7 +34,7 @@ const styles = StyleSheet.create({
   },
   ctaButtonWrapper: {
     height: 75,
-    marginHorizontal: 36,
+    marginHorizontal: 18,
     marginTop: 24,
   },
   ctaButton: {

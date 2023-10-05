@@ -1,13 +1,7 @@
-import SectionA from './components/sections/SectionA';
-import SectionB from './components/sections/SectionB';
-import SectionC from './components/sections/SectionC';
+import OnboardingScreen from './screens/OnboardingScreen';
+import HomeScreen from './screens/HomeScreen';
 
 export default function App() {
-  return (
-    <>
-      <SectionA />
-      <SectionB />
-      <SectionC />
-    </>
-  );
+  return <OnboardingScreen />;
+  // return <HomeScreen />;
 }
