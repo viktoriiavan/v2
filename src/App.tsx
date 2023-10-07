@@ -1,11 +1,7 @@
-import ShirsenduSectionB from "./components/sections/ShirsenduSectionB";
-import TopSection from "./components/sections/TopSection";
+import OnboardingScreen from './screens/OnboardingScreen';
+import HomeScreen from './screens/HomeScreen';
 
 export default function App() {
-  return (
-    <>
-      <TopSection />
-      <ShirsenduSectionB />
-    </>
-  );
+  return <OnboardingScreen />;
+  // return <HomeScreen />;
 }
