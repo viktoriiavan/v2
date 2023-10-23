@@ -1,4 +1,5 @@
 import { View, Text, StyleSheet, Image } from 'react-native';
+
 const image = require(`../assets/images/workout.png`);
 
 export default function WorkoutCard() {

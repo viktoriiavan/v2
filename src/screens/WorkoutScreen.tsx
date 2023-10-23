@@ -1,4 +1,12 @@
-import { SafeAreaView, View, Text, StyleSheet, Image } from 'react-native';
+import React, { useState } from 'react';
+import {
+  SafeAreaView,
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  Switch,
+} from 'react-native';
 import SectionA from '../components/sections/SectionA';
 
 const images = {
@@ -9,6 +17,9 @@ const images = {
 };
 
 export default function WorkoutScreen() {
+  const [isMLMode, setMLMode] = useState(false);
+  const toggleSwitch = () => setMLMode((previousState) => !previousState);
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={{ width: '100%' }}>
@@ -22,8 +33,21 @@ export default function WorkoutScreen() {
         <Image source={images.exercise} style={styles.image} />
       </View>
       <View style={styles.controlsWrapper}>
-        <View>{/* TODO: Toggle Button */}</View>
-        <View style={styles.controls}>
+        <View style={{ flex: 1, justifyContent: 'center' }} />
+        {/* ToggleButton */}
+        <View style={styles.toggleButtonContainer}>
+          <Text style={styles.text}>3D Couch</Text>
+          <Switch
+            trackColor={{ false: '#767577', true: '#767577' }}
+            thumbColor={isMLMode ? '#fff' : '#fff'}
+            ios_backgroundColor="#3e3e3e"
+            onValueChange={toggleSwitch}
+            value={isMLMode}
+          />
+          <Text style={styles.text}>ML Couch</Text>
+        </View>
+        {/* ActionButtons */}
+        <View style={styles.actionButtonContainer}>
           <Image
             style={styles.controlActionButton}
             source={images.controlBackward}
@@ -79,17 +103,22 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     width: '100%',
     padding: 36,
-    alignSelf: 'flex-end',
-    justifyContent: 'flex-end',
-    justifySelf: 'flex-end',
   },
-  controls: {
+  actionButtonContainer: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: 48,
   },
   controlActionButton: {
     width: 36,
     aspectRatio: 1,
+  },
+  toggleButtonContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
 });
