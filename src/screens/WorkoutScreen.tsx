@@ -7,7 +7,6 @@ import {
   Image,
   Switch,
 } from 'react-native';
-import SectionA from '../components/sections/SectionA';
 
 const images = {
   exercise: require('../assets/images/exercise.png'),
@@ -22,9 +21,7 @@ export default function WorkoutScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={{ width: '100%' }}>
-        <SectionA />
-      </View>
+      <View style={{ width: '100%' }}></View>
       <View style={styles.wrapper}>
         <Text style={styles.text}>Exercise 1 of 14</Text>
         <Text style={[styles.text, styles.textHero]}>Stretches</Text>

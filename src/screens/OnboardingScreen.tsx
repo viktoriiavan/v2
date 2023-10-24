@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, SafeAreaView, Image } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  SafeAreaView,
+  Image,
+  TouchableWithoutFeedback,
+} from 'react-native';
 
 const screens = [
   {
@@ -27,45 +34,56 @@ const screens = [
 ];
 
 export default function HomeScreen() {
-  // change currentScreen to 0, 1, 2, 3 to see the different screens
   const [currentScreen, setCurrentScreen] = useState(0);
 
-  const isFirstScreen = currentScreen <= 0;
-  const isLastScreen = currentScreen < screens.length - 1;
+  const isFirstScreen = currentScreen === 0; // Check if it's the first screen
+  const isLastScreen = currentScreen === screens.length - 1;
+
+  const handleTap = () => {
+    if (isLastScreen) {
+      // Reset the current screen if it's the last screen
+      setCurrentScreen(0);
+    } else {
+      // Increment the current screen
+      setCurrentScreen(currentScreen + 1);
+    }
+  };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View
-        style={{ flex: 1, justifyContent: 'flex-end', alignItems: 'center' }}
-      >
-        <Image source={screens[currentScreen].image} style={styles.image} />
-        <View style={{ width: '70%' }}>
-          <Text
-            style={[
-              styles.text,
-              styles.titleText,
-              isFirstScreen ? { fontSize: 40 } : { fontSize: 24 },
-            ]}
-          >
-            {screens[currentScreen].title}
-          </Text>
-          <Text style={[styles.text, styles.bodyText]}>
-            {screens[currentScreen].description}
-          </Text>
-          <Text
-            style={[
-              styles.text,
-              styles.ctaText,
-              isLastScreen ? { opacity: 0.25 } : { opacity: 1 },
-            ]}
-          >
-            {isLastScreen
-              ? 'Tap Anywhere To Continue'
-              : 'Tap Anywhere To Get Started'}
-          </Text>
+    <TouchableWithoutFeedback onPress={handleTap}>
+      <SafeAreaView style={styles.container}>
+        <View
+          style={{ flex: 1, justifyContent: 'flex-end', alignItems: 'center' }}
+        >
+          <Image source={screens[currentScreen].image} style={styles.image} />
+          <View style={{ width: '70%' }}>
+            <Text
+              style={[
+                styles.text,
+                styles.titleText,
+                isFirstScreen ? { fontSize: 40 } : { fontSize: 24 },
+              ]}
+            >
+              {screens[currentScreen].title}
+            </Text>
+            <Text style={[styles.text, styles.bodyText]}>
+              {screens[currentScreen].description}
+            </Text>
+            <Text
+              style={[
+                styles.text,
+                styles.ctaText,
+                isFirstScreen ? { opacity: 1 } : { opacity: 0.25 },
+              ]}
+            >
+              {isLastScreen
+                ? 'Tap Anywhere To Continue'
+                : 'Tap Anywhere To Get Started'}
+            </Text>
+          </View>
         </View>
-      </View>
-    </SafeAreaView>
+      </SafeAreaView>
+    </TouchableWithoutFeedback>
   );
 }
 
