@@ -22,7 +22,7 @@ export default function SectionC() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'black',
+    backgroundColor: '#090909',
   },
   text: {
     width: '100%',

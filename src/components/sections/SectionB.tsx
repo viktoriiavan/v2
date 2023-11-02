@@ -125,7 +125,7 @@ export default function SectionB() {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'black',
+    backgroundColor: '#090909',
   },
   section: {
     flexDirection: 'row',

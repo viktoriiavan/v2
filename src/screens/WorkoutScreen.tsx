@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { StatusBar } from 'expo-status-bar';
 import {
   SafeAreaView,
   View,
@@ -7,6 +8,8 @@ import {
   Image,
   Switch,
 } from 'react-native';
+import NavBar from '../components/nav/NavBar';
+
 
 const images = {
   exercise: require('../assets/images/exercise.png'),
@@ -22,6 +25,8 @@ export default function WorkoutScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={{ width: '100%' }}></View>
+      <StatusBar style = "light"/>
+      <NavBar/>
       <View style={styles.wrapper}>
         <Text style={styles.text}>Exercise 1 of 14</Text>
         <Text style={[styles.text, styles.textHero]}>Stretches</Text>
