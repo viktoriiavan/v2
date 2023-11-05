@@ -8,7 +8,7 @@ import {
   Image,
 } from 'react-native';
 import AchievementCard from '../AchievementCard';
-
+import NavBar from '../nav/NavBar';
 type AchievementsData = {
   id: string;
   title: string;

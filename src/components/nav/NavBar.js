@@ -1,17 +1,18 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View,Image } from 'react-native'
 import React from 'react'
 import {Feather,Ionicons} from "@expo/vector-icons"
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { useNavigation } from '@react-navigation/native'
+
 const NavBar = () => {
     const nav = useNavigation()
   return (
     <View style = {styles.con}> 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={ () => nav.openDrawer()}>
             <Feather name="menu" size={23} color="white" />
         </TouchableOpacity>
         <View style = {styles.imgBorder}>
-            <View style = {styles.realimg}></View>
+          <Image style = {styles.realimg} source={{uri:"https://minecraftfaces.com/wp-content/bigfaces/big-mooshroom-face.png"}} />
         </View>
     </View>
   )
