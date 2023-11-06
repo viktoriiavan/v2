@@ -1,3 +1,4 @@
+
 ## Simply
 
 App to create AI-based workout.
@@ -23,4 +24,4 @@ To Visit App:
 
 Scan QR from console
 
-YOU NEED EXPO GO TO ACCESS
+# **YOU NEED EXPO GO INSTALLED ON YOUR PHONE TO ACCESS**
