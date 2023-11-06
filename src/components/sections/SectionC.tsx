@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   ctaButtonWrapper: {
     height: 75,
     marginHorizontal: 18,
-    marginTop: 24,
+    marginTop: 40,
   },
   ctaButton: {
     flex: 1,

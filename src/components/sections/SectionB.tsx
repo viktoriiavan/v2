@@ -8,7 +8,6 @@ import {
   Image,
 } from 'react-native';
 import AchievementCard from '../AchievementCard';
-import NavBar from '../nav/NavBar';
 type AchievementsData = {
   id: string;
   title: string;
@@ -126,11 +125,12 @@ export default function SectionB() {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#090909',
+    marginVertical: -10,
   },
   section: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 16, // Add margin at the bottom for spacing
+    marginBottom: 20, // Add margin at the bottom for spacing
   },
   icon: {
     width: 40, // Adjust the width to your desired size with padding
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
     left: -28,
     width: '116%',
     height: 212,
-    marginVertical: 8,
+    marginVertical: 1,
   },
   text: {
     width: '100%',
