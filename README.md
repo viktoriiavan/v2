@@ -22,3 +22,5 @@ To Run Test Suite:
 To Visit App:
 
 Scan QR from console
+
+YOU NEED EXPO GO TO ACCESS
