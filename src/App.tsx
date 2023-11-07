@@ -12,12 +12,24 @@ import TabOneScreen from './screens/TabOneScreen';
 import TabTwoScreen from './screens/TabTwoScreen';
 import ML from './screens/ML';
 import ModalScreen from './screens/ModalScreen';
-
+import WorkoutSummary from './screens/WorkoutSummary';
+import { useFonts } from 'expo-font';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    "Lexend-Black" : require('./assets/fonts/Lexend-Regular.ttf'),
+    "Lexend-Bold" : require('./assets/fonts/Lexend-Bold.ttf'),
+    "Lexend-ExtraBold" : require('./assets/fonts/Lexend-ExtraBold.ttf'),
+    "Lexend-ExtraLight" : require('./assets/fonts/Lexend-ExtraLight.ttf'),
+    "Lexend-Light" : require('./assets/fonts/Lexend-Light.ttf'),
+    "Lexend-Medium" : require('./assets/fonts/Lexend-Medium.ttf'),
+    "Lexend-Regular" : require('./assets/fonts/Lexend-Regular.ttf'),
+    "Lexend-SemiBold" : require('./assets/fonts/Lexend-SemiBold.ttf'),
+    "Lexend-Thin" : require('./assets/fonts/Lexend-Thin.ttf'),
+  })
   return (
     <NavigationContainer>
       <Drawer.Navigator
@@ -31,6 +43,7 @@ export default function App() {
         <Drawer.Screen name="TabOne" component={TabOneScreen} />
         <Drawer.Screen name="TabTwo" component={TabTwoScreen} />
         <Drawer.Screen name="ModalScreen" component={ModalScreen} />
+        <Drawer.Screen name="Workout Summary" component={WorkoutSummary} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
