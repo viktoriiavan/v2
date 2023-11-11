@@ -12,6 +12,7 @@ import TabOneScreen from './screens/TabOneScreen';
 import TabTwoScreen from './screens/TabTwoScreen';
 import ML from './screens/ML';
 import ModalScreen from './screens/ModalScreen';
+import CountdownScreen from './screens/CountdownScreen';
 
 
 const Drawer = createDrawerNavigator();
@@ -31,6 +32,7 @@ export default function App() {
         <Drawer.Screen name="TabOne" component={TabOneScreen} />
         <Drawer.Screen name="TabTwo" component={TabTwoScreen} />
         <Drawer.Screen name="ModalScreen" component={ModalScreen} />
+        <Drawer.Screen name="CountdownScreen" component={CountdownScreen} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
