@@ -4,10 +4,10 @@ import {Feather,Ionicons} from "@expo/vector-icons"
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { useNavigation } from '@react-navigation/native'
 
-const NavBar = () => {
+const NavBar = ({styles: config}) => {
     const nav = useNavigation()
   return (
-    <View style = {styles.con}> 
+    <View style = {[styles.con, config]}>
         <TouchableOpacity onPress={ () => nav.openDrawer()}>
             <Feather name="menu" size={23} color="white" />
         </TouchableOpacity>

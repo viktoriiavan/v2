@@ -26,7 +26,7 @@ export default function WorkoutScreen() {
     <SafeAreaView style={styles.container}>
       <View style={{ width: '100%' }}></View>
       <StatusBar style="light" />
-      <NavBar />
+      <NavBar styles={undefined} />
       <View style={styles.wrapper}>
         <Text style={styles.text}>Exercise 1 of 14</Text>
         <Text style={[styles.text, styles.textHero]}>Stretches</Text>
