@@ -7,11 +7,7 @@ import OnboardingScreen from './screens/OnboardingScreen';
 import HomeScreen from './screens/HomeScreen';
 import WorkoutScreen from './screens/WorkoutScreen';
 import CustomDrawer from './components/nav/CustomDrawer';
-import NotFoundScreen from './screens/NotFoundScreen';
-import TabOneScreen from './screens/TabOneScreen';
-import TabTwoScreen from './screens/TabTwoScreen';
 import ML from './screens/ML';
-import ModalScreen from './screens/ModalScreen';
 import WorkoutSummary from './screens/WorkoutSummary';
 import { useFonts } from 'expo-font';
 
@@ -20,29 +16,26 @@ const Stack = createStackNavigator();
 
 export default function App() {
   const [fontsLoaded] = useFonts({
-    "Lexend-Black" : require('./assets/fonts/Lexend-Regular.ttf'),
-    "Lexend-Bold" : require('./assets/fonts/Lexend-Bold.ttf'),
-    "Lexend-ExtraBold" : require('./assets/fonts/Lexend-ExtraBold.ttf'),
-    "Lexend-ExtraLight" : require('./assets/fonts/Lexend-ExtraLight.ttf'),
-    "Lexend-Light" : require('./assets/fonts/Lexend-Light.ttf'),
-    "Lexend-Medium" : require('./assets/fonts/Lexend-Medium.ttf'),
-    "Lexend-Regular" : require('./assets/fonts/Lexend-Regular.ttf'),
-    "Lexend-SemiBold" : require('./assets/fonts/Lexend-SemiBold.ttf'),
-    "Lexend-Thin" : require('./assets/fonts/Lexend-Thin.ttf'),
-  })
+    'Lexend-Black': require('./assets/fonts/Lexend-Regular.ttf'),
+    'Lexend-Bold': require('./assets/fonts/Lexend-Bold.ttf'),
+    'Lexend-ExtraBold': require('./assets/fonts/Lexend-ExtraBold.ttf'),
+    'Lexend-ExtraLight': require('./assets/fonts/Lexend-ExtraLight.ttf'),
+    'Lexend-Light': require('./assets/fonts/Lexend-Light.ttf'),
+    'Lexend-Medium': require('./assets/fonts/Lexend-Medium.ttf'),
+    'Lexend-Regular': require('./assets/fonts/Lexend-Regular.ttf'),
+    'Lexend-SemiBold': require('./assets/fonts/Lexend-SemiBold.ttf'),
+    'Lexend-Thin': require('./assets/fonts/Lexend-Thin.ttf'),
+  });
   return (
     <NavigationContainer>
       <Drawer.Navigator
-      drawerContent={props => <CustomDrawer {...props} />}
-      screenOptions={{headerShown:false,drawerActiveTintColor:"gray"}}
-       initialRouteName='Workout'>
+        drawerContent={(props) => <CustomDrawer {...props} />}
+        screenOptions={{ headerShown: false, drawerActiveTintColor: 'gray' }}
+        initialRouteName="Workout"
+      >
         <Drawer.Screen name="Workout" component={WorkoutScreen} />
         <Drawer.Screen name="Onboarding" component={OnboardingScreen} />
         <Drawer.Screen name="Home" component={HomeScreen} />
-        <Drawer.Screen name="NotFound" component={NotFoundScreen} />
-        <Drawer.Screen name="TabOne" component={TabOneScreen} />
-        <Drawer.Screen name="TabTwo" component={TabTwoScreen} />
-        <Drawer.Screen name="ModalScreen" component={ModalScreen} />
         <Drawer.Screen name="Workout Summary" component={WorkoutSummary} />
       </Drawer.Navigator>
     </NavigationContainer>
