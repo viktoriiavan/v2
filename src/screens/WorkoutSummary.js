@@ -20,8 +20,8 @@ const WorkoutSummary = () => {
         <Text style = {styles.sumTxt2}>Workout Summary</Text>
       </View>
       <View style = {styles.scrollCon}>
-        <ScrollView   style = {styles.scroll} >
-          <Earned/>
+        <ScrollView contentContainerStyle={{paddingBottom:"70%"}} style = {styles.scroll} >
+         <Earned/>
           <Streak/>
           <Correctness/>
         </ScrollView>
@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
     },
     scroll:{
       width:"100%",
+      
     },  
     scrollCon:{
       width:"100%",
@@ -89,7 +90,6 @@ const styles = StyleSheet.create({
         justifyContent:"center",
         alignItems:"center",
         borderRadius:30,
-
         marginVertical:'5%'
     },
     buttonText:{
