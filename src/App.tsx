@@ -38,6 +38,7 @@ export default function App() {
         <Drawer.Screen name="Onboarding" component={OnboardingScreen} />
         <Drawer.Screen name="Home" component={HomeScreen} />
         <Drawer.Screen name="CountdownScreen" component={CountdownScreen} />
+        <Drawer.Screen name="Workout Summary" component={WorkoutSummary} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
