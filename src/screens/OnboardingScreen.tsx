@@ -3,10 +3,11 @@ import {
   View,
   Text,
   StyleSheet,
-  SafeAreaView,
+  Dimensions,
   Image,
   TouchableWithoutFeedback,
 } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 
 const screens = [
   {
@@ -22,9 +23,7 @@ const screens = [
   {
     image: require('../assets/images/onboarding-screen-3.png'),
     title: 'Powered By AI',
-    description: `Using the same formulas which guide spaceships, our algorithms will
-    catch the smallest mistakes your coach misses and correct them
-    before they become habits.`,
+    description: `Using the same formulas which guide spaceships, our algorithms will catch the smallest mistakes your coach misses and correct them before they become habits.`,
   },
   {
     image: require('../assets/images/onboarding-screen-4.png'),
@@ -50,47 +49,49 @@ export default function HomeScreen() {
   };
 
   return (
-    <TouchableWithoutFeedback onPress={handleTap}>
-      <SafeAreaView style={styles.container}>
-        <View
-          style={{ flex: 1, justifyContent: 'flex-end', alignItems: 'center' }}
-        >
-          <Image source={screens[currentScreen].image} style={styles.image} />
-          <View style={{ width: '70%' }}>
-            <Text
-              style={[
-                styles.text,
-                styles.titleText,
-                isFirstScreen ? { fontSize: 40 } : { fontSize: 24 },
-              ]}
-            >
-              {screens[currentScreen].title}
-            </Text>
-            <Text style={[styles.text, styles.bodyText]}>
-              {screens[currentScreen].description}
-            </Text>
+    <>
+      <Image source={screens[currentScreen].image} style={styles.image} />
+      <TouchableWithoutFeedback onPress={handleTap}>
+        <View style={styles.container}>
+          <StatusBar hidden />
+          <View
+            style={{ flex: 1, alignItems: 'center' }}
+          >
+            <View style={{ width: '70%', position: 'absolute', top: (Dimensions.get('screen').height-75)*0.7 }}>
+              <Text
+                style={[
+                  styles.text,
+                  styles.titleText,
+                  isFirstScreen ? { fontSize: 40 } : { fontSize: 24 },
+                ]}
+              >
+                {screens[currentScreen].title}
+              </Text>
+              <Text style={[styles.text, styles.bodyText]}>
+                {screens[currentScreen].description}
+              </Text>
+            </View>
             <Text
               style={[
                 styles.text,
                 styles.ctaText,
-                isFirstScreen ? { opacity: 1 } : { opacity: 0.25 },
+                isLastScreen ? { opacity: 1 } : { opacity: 0.25 },
               ]}
             >
               {isLastScreen
-                ? 'Tap Anywhere To Continue'
-                : 'Tap Anywhere To Get Started'}
+                  ? 'Tap Anywhere To Get Started'
+                  : 'Tap Anywhere To Continue'}
             </Text>
           </View>
         </View>
-      </SafeAreaView>
-    </TouchableWithoutFeedback>
+      </TouchableWithoutFeedback>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: 'black',
+    flex: 1
   },
   image: {
     width: '100%',
@@ -101,20 +102,21 @@ const styles = StyleSheet.create({
   text: {
     color: 'white',
     textAlign: 'center',
-    marginVertical: 15,
   },
   titleText: {
-    fontWeight: '600',
+    fontWeight: '600'
   },
   bodyText: {
     fontSize: 16,
     fontWeight: '300',
     marginHorizontal: 32,
     opacity: 0.75,
+    marginTop: 15
   },
   ctaText: {
     fontSize: 16,
-    fontWeight: '300',
-    marginVertical: 55,
+    fontWeight: '700',
+    position: 'absolute',
+    bottom: 63
   },
 });
