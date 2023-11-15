@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -8,6 +8,7 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import { Asset } from 'expo-asset';
 
 const screens = [
   {
@@ -34,9 +35,21 @@ const screens = [
 
 export default function HomeScreen() {
   const [currentScreen, setCurrentScreen] = useState(0);
+  const [imageAssets, setImageAssets] = useState([]);
 
   const isFirstScreen = currentScreen === 0; // Check if it's the first screen
   const isLastScreen = currentScreen === screens.length - 1;
+  
+  useEffect(() => {
+    const loadImages = async () => {
+      const assets = screens.map((screen) => {
+        return Asset.fromModule(screen.image).downloadAsync();
+      });
+      await Promise.all(assets);
+      setImageAssets(assets);
+    };
+    loadImages();
+  }, []);
 
   const handleTap = () => {
     if (isLastScreen) {
