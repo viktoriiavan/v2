@@ -10,7 +10,7 @@ const Correctness = () => {
       <Text style = {styles.header}>Achievements Earned</Text>
     </View>
     <View style = {styles.box}>
-    <Text style = {styles.endure}>EUNDURANT</Text>
+    <Text style = {styles.endure}>ENDURANT</Text>
       <View style = {styles.left}>
 
          <Text style = {styles.title}>HAVE</Text>

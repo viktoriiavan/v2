@@ -1,8 +1,8 @@
-import { StyleSheet, Text, View ,ImageBackground, ScrollView} from 'react-native'
-import { TouchableOpacity } from 'react-native-gesture-handler'
-import { Feather } from '@expo/vector-icons'; 
-import React from 'react'
-import background from "../assets/images/WorkoutSummary/background.png"
+import { StyleSheet, Text, View, ImageBackground, ScrollView } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Feather } from '@expo/vector-icons';
+import React from 'react';
+import background from "../assets/images/WorkoutSummary/background.png";
 import Correctness from '../components/Summary/Correctness';
 import Streak from '../components/Summary/Streak';
 import Earned from '../components/Summary/Earned';
@@ -20,16 +20,15 @@ const WorkoutSummary = () => {
         <Text style = {styles.sumTxt2}>Workout Summary</Text>
       </View>
       <View style = {styles.scrollCon}>
-        <ScrollView contentContainerStyle={{paddingBottom:"70%"}} style = {styles.scroll} >
-         <Earned/>
+        <ScrollView   style = {styles.scroll} >
+          <Earned/>
           <Streak/>
           <Correctness/>
         </ScrollView>
-      </View>
-      <TouchableOpacity activeOpacity={0.75} style = {styles.button}>
-            <Text style = {styles.buttonText}>Continue</Text>
-      </TouchableOpacity>
-    </ImageBackground>
+        <TouchableOpacity activeOpacity={0.75} style={styles.button}>
+          <Text style={styles.buttonText}>Continue</Text>
+        </TouchableOpacity>
+      </ImageBackground>
     </>
   )
 }
@@ -44,7 +43,6 @@ const styles = StyleSheet.create({
     },
     scroll:{
       width:"100%",
-      
     },  
     scrollCon:{
       width:"100%",
@@ -90,6 +88,7 @@ const styles = StyleSheet.create({
         justifyContent:"center",
         alignItems:"center",
         borderRadius:30,
+
         marginVertical:'5%'
     },
     buttonText:{
