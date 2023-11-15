@@ -19,12 +19,13 @@ const WorkoutSummary = () => {
         </View>
         <Text style = {styles.sumTxt2}>Workout Summary</Text>
       </View>
-      <View style = {styles.scrollCon}>
-        <ScrollView   style = {styles.scroll} >
+      <View style = {styles.scrollCon}></View>
+        <ScrollView contentContainerStyle={{paddingBottom:"70%"}}  style = {styles.scroll} >
           <Earned/>
           <Streak/>
           <Correctness/>
         </ScrollView>
+       <View/>
         <TouchableOpacity activeOpacity={0.75} style={styles.button}>
           <Text style={styles.buttonText}>Continue</Text>
         </TouchableOpacity>
