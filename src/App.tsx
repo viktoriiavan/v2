@@ -7,8 +7,8 @@ import OnboardingScreen from './screens/OnboardingScreen';
 import HomeScreen from './screens/HomeScreen';
 import WorkoutScreen from './screens/WorkoutScreen';
 import CustomDrawer from './components/nav/CustomDrawer';
-import ML from './screens/ML';
 import WorkoutSummary from './screens/WorkoutSummary';
+import Settings from './screens/Settings';
 import { useFonts } from 'expo-font';
 
 const Drawer = createDrawerNavigator();
@@ -37,6 +37,7 @@ export default function App() {
         <Drawer.Screen name="Onboarding" component={OnboardingScreen} />
         <Drawer.Screen name="Home" component={HomeScreen} />
         <Drawer.Screen name="Workout Summary" component={WorkoutSummary} />
+        <Drawer.Screen name="Settings" component={Settings} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
