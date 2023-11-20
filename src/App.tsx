@@ -12,6 +12,7 @@ import Settings from './screens/Settings';
 import { useFonts } from 'expo-font';
 import CountdownScreen from './screens/CountdownScreen';
 import SignIn from './screens/SignIn';
+import Leaderboard from './screens/LeaderboardScreen';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -42,6 +43,7 @@ export default function App() {
         <Drawer.Screen name="Workout Summary" component={WorkoutSummary} />
         <Drawer.Screen name="SignIn" component={SignIn} />
         <Drawer.Screen name="Settings" component={Settings} />
+        <Drawer.Screen name="Leaderboard" component={Leaderboard} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
