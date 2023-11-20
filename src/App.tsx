@@ -11,6 +11,7 @@ import ML from './screens/ML';
 import WorkoutSummary from './screens/WorkoutSummary';
 import { useFonts } from 'expo-font';
 import CountdownScreen from './screens/CountdownScreen';
+import SignIn from './screens/SignIn';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -39,6 +40,7 @@ export default function App() {
         <Drawer.Screen name="Home" component={HomeScreen} />
         <Drawer.Screen name="CountdownScreen" component={CountdownScreen} />
         <Drawer.Screen name="Workout Summary" component={WorkoutSummary} />
+        <Drawer.Screen name="SignIn" component={SignIn} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
