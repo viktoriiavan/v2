@@ -7,8 +7,8 @@ import OnboardingScreen from './screens/OnboardingScreen';
 import HomeScreen from './screens/HomeScreen';
 import WorkoutScreen from './screens/WorkoutScreen';
 import CustomDrawer from './components/nav/CustomDrawer';
-import ML from './screens/ML';
 import WorkoutSummary from './screens/WorkoutSummary';
+import Settings from './screens/Settings';
 import { useFonts } from 'expo-font';
 import CountdownScreen from './screens/CountdownScreen';
 import SignIn from './screens/SignIn';
@@ -41,6 +41,7 @@ export default function App() {
         <Drawer.Screen name="CountdownScreen" component={CountdownScreen} />
         <Drawer.Screen name="Workout Summary" component={WorkoutSummary} />
         <Drawer.Screen name="SignIn" component={SignIn} />
+        <Drawer.Screen name="Settings" component={Settings} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
