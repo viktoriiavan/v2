@@ -9,6 +9,7 @@ import WorkoutScreen from './screens/WorkoutScreen';
 import CustomDrawer from './components/nav/CustomDrawer';
 import WorkoutSummary from './screens/WorkoutSummary';
 import Settings from './screens/Settings';
+import Achievements from './screens/Achievements';
 import { useFonts } from 'expo-font';
 
 const Drawer = createDrawerNavigator();
@@ -38,6 +39,7 @@ export default function App() {
         <Drawer.Screen name="Home" component={HomeScreen} />
         <Drawer.Screen name="Workout Summary" component={WorkoutSummary} />
         <Drawer.Screen name="Settings" component={Settings} />
+        <Drawer.Screen name="Achievements" component={Achievements} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
