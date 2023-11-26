@@ -2,21 +2,50 @@ import { StyleSheet, Text, View,Image } from 'react-native'
 import React from 'react'
 import bat from "./bi_battery.png"
 import {FontAwesome5 } from '@expo/vector-icons'; 
+import PagerView from 'react-native-pager-view';
 const EndurTwo = () => {
   return (
-    <View style = {styles.box}>
-    <Text style = {styles.seeall}>See all → </Text>
-    <Text style = {styles.endure}>ENDURANT</Text>
-      <View style = {styles.left}>
-         <Text style = {styles.title}>HAVE</Text>
-          <Text style = {styles.stat}>124</Text>
-          <Text style = {styles.title} >UNLOCKED</Text>
-          <Text style = {styles.stat}>5/23/2023</Text>
+    <PagerView style = {styles.box} initialPage={0}>
+      <View style = {styles.box2} key = {1}>
+      <Text style = {styles.seeall}>See all → </Text>
+      <Text style = {styles.endure}>ENDURANT</Text>
+        <View style = {styles.left}>
+          <Text style = {styles.title}>HAVE</Text>
+            <Text style = {styles.stat}>124</Text>
+            <Text style = {styles.title} >UNLOCKED</Text>
+            <Text style = {styles.stat}>5/23/2023</Text>
+        </View>
+        <View style = {styles.right}>
+          <Image source = {bat}/>
+        </View>
       </View>
-      <View style = {styles.right}>
-        <Image source = {bat}/>
+      <View style = {styles.box2} key = {2}>
+      <Text style = {styles.seeall}>See all → </Text>
+      <Text style = {styles.endure}>ENDURANT</Text>
+        <View style = {styles.left}>
+          <Text style = {styles.title}>HAVE</Text>
+            <Text style = {styles.stat}>124</Text>
+            <Text style = {styles.title} >UNLOCKED</Text>
+            <Text style = {styles.stat}>5/23/2023</Text>
+        </View>
+        <View style = {styles.right}>
+          <Image source = {bat}/>
+        </View>
       </View>
-    </View>
+      <View style = {styles.box2} key = {3}>
+      <Text style = {styles.seeall}>See all → </Text>
+      <Text style = {styles.endure}>ENDURANT</Text>
+        <View style = {styles.left}>
+          <Text style = {styles.title}>HAVE</Text>
+            <Text style = {styles.stat}>124</Text>
+            <Text style = {styles.title} >UNLOCKED</Text>
+            <Text style = {styles.stat}>5/23/2023</Text>
+        </View>
+        <View style = {styles.right}>
+          <Image source = {bat}/>
+        </View>
+      </View>
+    </PagerView>
  
   )
 }
@@ -27,7 +56,7 @@ export default EndurTwo
 const styles = StyleSheet.create({
     box:{
         width:"90%",
-        height:"35%",
+        height:"70%",
         borderRadius:30,
         borderWidth:3,
         borderColor:"rgba(255, 255, 255, 0.08)",
@@ -37,6 +66,16 @@ const styles = StyleSheet.create({
         alignSelf:"center",
         flexDirection:"row",
     },
+    box2:{
+      width:"100%",
+      height:"100%",
+      justifyContent:"space-around",
+      alignItems:"center",
+      alignSelf:"center",
+      flexDirection:"row",
+      marginTop:"1%"
+  },
+
         title:{
         fontFamily:"Lexend-Regular",
         color: "rgba(255, 255, 255, 0.25)",

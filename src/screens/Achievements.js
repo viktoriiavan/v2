@@ -15,7 +15,7 @@ const Achievements = () => {
             <FontAwesome5 name="award" size={24} color="white" />
             <Text style = {styles.titleText}>Achievements</Text>
         </View>
-        <ScrollView contentContainerStyle={{paddingBottom:"70%"}} style = {styles.scroll}>
+        <ScrollView contentContainerStyle={{paddingBottom:"150%"}} style = {styles.scroll}>
             <View style = {styles.titleCon}>
                 <AntDesign name="checkcircleo" size={24} color="white" />
                 <Text style = {styles.titleText}>Progress</Text>

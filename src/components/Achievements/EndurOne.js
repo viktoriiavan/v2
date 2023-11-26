@@ -5,7 +5,7 @@ import PagerView from 'react-native-pager-view';
 const EndurOne = () => {
   return (
     <PagerView style = {styles.box} initialPage={0}>
-      <View style = {styles.scroll} key={0}>
+      <View style = {styles.scroll} key={1}>
         <Text style = {styles.title}>ENDURANT</Text>
         <View style = {styles.con1}>
           <Image style ={{transform:[{scale:.4}],marginHorizontal:"-18%"}} source = {bat} />
@@ -15,7 +15,17 @@ const EndurOne = () => {
           <View style = {styles.barFill}/>
         </View>
       </View>
-      <View style = {styles.scroll} key={1}>
+      <View style = {styles.scroll} key={2}>
+        <Text style = {styles.title}>ENDURANT</Text>
+        <View style = {styles.con1}>
+          <Image style ={{transform:[{scale:.4}],marginHorizontal:"-18%"}} source = {bat} />
+          <Text style = {styles.percent}>80%</Text>
+        </View>
+        <View style = {styles.barCon}>
+          <View style = {styles.barFill}/>
+        </View>
+      </View>
+      <View style = {styles.scroll} key={3}>
         <Text style = {styles.title}>ENDURANT</Text>
         <View style = {styles.con1}>
           <Image style ={{transform:[{scale:.4}],marginHorizontal:"-18%"}} source = {bat} />
@@ -34,7 +44,7 @@ export default EndurOne
 const styles = StyleSheet.create({
     box:{
         width:"90%",
-        height:"50%",
+        height:"70%",
         borderRadius:30,
         borderWidth:3,
         borderColor:"rgba(255, 255, 255, 0.08)",
@@ -85,14 +95,13 @@ const styles = StyleSheet.create({
       barFill:{
         backgroundColor:"rgba(255, 255, 255, 0.25)",
         width:"85%",
-        height:"60%",
+        height:"70%",
         alignSelf:"flex-start",
-        marginLeft:"2%",
+        marginLeft:"1%",
         borderRadius:30,
       },
       scroll:{
         marginTop: "5%",
-        borderWidth: 1,
         width:"100%",
         height:"100%",
         alignSelf:"center",

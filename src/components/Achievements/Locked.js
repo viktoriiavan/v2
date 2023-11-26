@@ -14,7 +14,7 @@ export default Locked
 const styles = StyleSheet.create({
     box:{
         width:"90%",
-        height:"35%",
+        height:"70%",
         borderRadius:30,
         borderWidth:3,
         borderColor:"rgba(255, 255, 255, 0.08)",
