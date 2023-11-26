@@ -4,10 +4,9 @@ import bat from "./bi_battery.png"
 import PagerView from 'react-native-pager-view';
 const EndurOne = () => {
   return (
-    <View style = {styles.box}>
-      <View style = {styles.scroll}>
+    <PagerView style = {styles.box} initialPage={0}>
+      <View style = {styles.scroll} key={0}>
         <Text style = {styles.title}>ENDURANT</Text>
-        <Text style = {styles.seeall}>See all → </Text>
         <View style = {styles.con1}>
           <Image style ={{transform:[{scale:.4}],marginHorizontal:"-18%"}} source = {bat} />
           <Text style = {styles.percent}>80%</Text>
@@ -16,8 +15,18 @@ const EndurOne = () => {
           <View style = {styles.barFill}/>
         </View>
       </View>
-    </View>
-  )
+      <View style = {styles.scroll} key={1}>
+        <Text style = {styles.title}>ENDURANT</Text>
+        <View style = {styles.con1}>
+          <Image style ={{transform:[{scale:.4}],marginHorizontal:"-18%"}} source = {bat} />
+          <Text style = {styles.percent}>80%</Text>
+        </View>
+        <View style = {styles.barCon}>
+          <View style = {styles.barFill}/>
+        </View>
+      </View>
+    </PagerView>
+    )
 }
 
 export default EndurOne
@@ -25,7 +34,7 @@ export default EndurOne
 const styles = StyleSheet.create({
     box:{
         width:"90%",
-        height:"35%",
+        height:"50%",
         borderRadius:30,
         borderWidth:3,
         borderColor:"rgba(255, 255, 255, 0.08)",
@@ -82,11 +91,12 @@ const styles = StyleSheet.create({
         borderRadius:30,
       },
       scroll:{
-        borderWidth:1,
+        marginTop: "5%",
+        borderWidth: 1,
         width:"100%",
         height:"100%",
         alignSelf:"center",
         justifyContent:"center",
         alignItems:"center",
-      },
+      }
 })
