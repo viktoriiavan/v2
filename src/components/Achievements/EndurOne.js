@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
         color:"#FFF",
         fontSize:25,
         position:"absolute",
-        top:"12%",
+        top:"5%",
         left:"9%"
       },
       seeall:{
